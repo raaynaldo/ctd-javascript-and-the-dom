@@ -22,3 +22,20 @@ const skills = [
   'HTML',
   'CSS',
 ];
+
+const skillsSection = document.getElementById('skills');
+const skillsList = skillsSection.getElementsByTagName('ul')[0];
+
+//Using forEach
+// skills.forEach((s) => {
+//   const skill = document.createElement('li');
+//   skill.innerText = s;
+//   skillsList.appendChild(skill);
+// });
+
+//Using for
+for (let i = 0; i < skills.length; i++) {
+  const skill = document.createElement('li');
+  skill.innerText = skills[i];
+  skillsList.appendChild(skill);
+}
