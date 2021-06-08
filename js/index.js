@@ -75,9 +75,8 @@ saveButton.addEventListener("click", (e) => {
   const email = li.children[1].value;
   const comment = li.children[2].value;
 
-  li.innerHTML = ""; //remove children;
   const updatedMessage = createLi(name, email, comment);
-  li.appendChild(updatedMessage);
+  li.replaceWith(updatedMessage);
 });
 
 const messageForm = document.getElementsByName("leave_message")[0];
