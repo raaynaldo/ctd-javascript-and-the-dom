@@ -42,6 +42,44 @@ for (let i = 0; i < skills.length; i++) {
 
 // Lesson 4-3
 
+const editButton = document.createElement("button");
+editButton.textContent = "edit";
+editButton.type = "button";
+editButton.addEventListener("click", (e) => {
+  const li = e.target.parentNode;
+  const email = li.children[0].href.slice(7);
+  const name = li.children[0].textContent;
+  const comment = li.children[1].textContent.slice(8);
+
+  const emailInput = document.createElement("input");
+  emailInput.value = email;
+  const nameInput = document.createElement("input");
+  nameInput.value = name;
+  const commentInput = document.createElement("input");
+  commentInput.value = comment;
+
+  li.innerHTML = ""; //remove children
+  li.appendChild(nameInput);
+  li.appendChild(emailInput);
+  li.appendChild(commentInput);
+  li.appendChild(saveButton);
+  e.target.remove();
+});
+
+const saveButton = document.createElement("button");
+saveButton.textContent = "save";
+saveButton.type = "button";
+saveButton.addEventListener("click", (e) => {
+  const li = e.target.parentNode;
+  const name = li.children[0].value;
+  const email = li.children[1].value;
+  const comment = li.children[2].value;
+
+  li.innerHTML = ""; //remove children;
+  const updatedMessage = createLi(name, email, comment);
+  li.appendChild(updatedMessage);
+});
+
 const messageForm = document.getElementsByName("leave_message")[0];
 messageForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -52,8 +90,17 @@ messageForm.addEventListener("submit", (event) => {
   const messageSection = document.getElementById("messages");
   const messageList = messageSection.getElementsByTagName("ul")[0];
 
+  const newMessage = createLi(name, email, message);
+
+  messageList.appendChild(newMessage);
+
+  hideOrUnhide();
+  messageForm.reset();
+});
+
+function createLi(name, email, message) {
   const newMessage = document.createElement("li");
-  newMessage.innerHTML = `<a href="mailto:${email}">${name}</a><span> wrote: ${message} </span>`;
+  newMessage.innerHTML = `<a href="mailto:${email}">${name}</a><span> wrote: ${message}</span>`;
 
   const removeButton = document.createElement("button");
   removeButton.innerText = "remove";
@@ -64,11 +111,11 @@ messageForm.addEventListener("submit", (event) => {
     hideOrUnhide();
   });
 
-  messageList.appendChild(newMessage);
+  newMessage.appendChild(editButton);
   newMessage.appendChild(removeButton);
-  hideOrUnhide();
-  messageForm.reset();
-});
+
+  return newMessage;
+}
 
 function hideOrUnhide() {
   const messageSection = document.getElementById("messages");
