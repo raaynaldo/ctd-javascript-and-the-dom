@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+:root {
+    --section-margin-top: 3em;
+}
+
 *,
 *::before,
 *::after {
@@ -53,11 +57,11 @@ img {
 }
 
 #about {
-    margin-top: 4em;
+    margin-top: var(--section-margin-top);
 }
 
 #experience {
-    margin-top: 4em;
+    margin-top: var(--section-margin-top);
 }
 
 #experience ul {
@@ -84,6 +88,127 @@ img {
         justify-content: space-between;
     }
 }
+
+#skills {
+    margin-top: var(--section-margin-top);
+}
+
+#skills ul {
+    list-style: none;
+}
+
+#skills ul li {
+    color: rgb(0, 145, 255);
+    border: rgb(0, 145, 255) 2px solid;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    padding: 0.2rem 0.5rem;
+}
+
+#message {
+    margin-top: var(--section-margin-top);
+}
+
+#message input {
+    padding: 0.4rem;
+}
+
+#message textarea {
+    padding: 0.4rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    #message form {
+        width: 75%;
+    }
+
+    .inline-field {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    #message form {
+        width: 50%;
+    }
+}
+
+#message button {
+    color: white;
+    background-color: rgb(0, 145, 255);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+}
+
+#messages {
+    margin-top: var(--section-margin-top);
+}
+
+#messages li {
+    list-style-type: none;
+    border-bottom: black 1px solid;
+    padding: 1rem 0;
+}
+
+.btn-edit {
+    color: black;
+    background-color: #eaeaea;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+    width: 5rem;
+}
+
+.btn-remove {
+    color: white;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+    width: 5rem;
+}
+
+.btn-edit + .btn-remove {
+    margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    #messages li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+footer {
+    margin-top: var(--section-margin-top);
+    background-color: #eaeaea;
+    height: 2.5rem;
+}
+
+footer .layout {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* .skill + .skill {
+    margin-left: 5px;
+} */
 
 /* .email,
 .name {

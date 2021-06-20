@@ -7,7 +7,7 @@ const thisYear = today.getFullYear();
 const footer = document.querySelector('footer div');
 
 const copyright = document.createElement('p');
-copyright.innerHTML = `&#169; <span>Raynaldo</span> ${thisYear}`;
+footer.innerHTML = `&#169; Raynaldo ${thisYear}`;
 
 footer.appendChild(copyright);
 
@@ -20,7 +20,8 @@ const skills = [
     'C#',
     'ASP.NET',
     'HTML',
-    'CSS'
+    'CSS',
+    'SQL',
 ];
 
 const skillsSection = document.getElementById('skills');
@@ -36,6 +37,7 @@ const skillsList = skillsSection.getElementsByTagName('ul')[0];
 //Using for
 for (let i = 0; i < skills.length; i++) {
     const skill = document.createElement('li');
+    skill.className = 'skill';
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
@@ -45,6 +47,7 @@ for (let i = 0; i < skills.length; i++) {
 const editButton = document.createElement('button');
 editButton.textContent = 'edit';
 editButton.type = 'button';
+editButton.className = 'btn-edit';
 editButton.addEventListener('click', (e) => {
     const li = e.target.parentNode;
     const email = li.children[0].href.slice(7);
@@ -100,19 +103,25 @@ messageForm.addEventListener('submit', (event) => {
 
 function createLi(name, email, message) {
     const newMessage = document.createElement('li');
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a><span> wrote: ${message}</span>`;
+    // newMessage.innerHTML = `<a href="mailto:${email}">${name}</a><span> wrote: ${message}</span>`;
+    newMessage.innerHTML = `<div class="comment">
+                                <div>${message}</div>
+                                <div>${new Date().toLocaleString()} from <a href="${email}">${name}</a></div>
+                            </div>`;
 
+    const buttonDiv = document.createElement('div');
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = 'button';
+    removeButton.className = 'btn-remove'
     removeButton.addEventListener('click', (event) => {
-        const entry = event.target.parentNode;
-        entry.remove();
+        newMessage.remove();
         hideOrUnhide();
     });
 
-    newMessage.appendChild(editButton);
-    newMessage.appendChild(removeButton);
+    buttonDiv.appendChild(editButton);
+    buttonDiv.appendChild(removeButton);
+    newMessage.append(buttonDiv);
 
     return newMessage;
 }

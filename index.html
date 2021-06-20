@@ -32,23 +32,23 @@
                 <h2>Experience</h2>
 
                 <ul>
-                    <li class='job'>
+                    <li class="job">
                         <div class="title">Software Engineer - VitusVet</div>
                         <div class="timeline">June 2021 - Present</div>
                     </li>
-                    <li class='job'>
+                    <li class="job">
                         <div class="title">
                             Full Stack Web Developer at Emerio Indonesia
                         </div>
                         <div class="timeline">June 2021 - Present</div>
                     </li>
-                    <li class='job'>
+                    <li class="job">
                         <div class="title">
                             ASP.NET Developer at Mitra Integrasi Informatika
                         </div>
                         <div class="timeline">June 2021 - Present</div>
                     </li>
-                    <li class='job'>
+                    <li class="job">
                         <div class="title">
                             ASP.NET Developer at Neurosoft Indonesia
                         </div>
@@ -71,32 +71,38 @@
             </div>
         </section> -->
 
-        <section>
+        <section id="message">
             <div class="layout">
                 <h2>Leave a Message</h2>
                 <form action="" name="leave_message">
-                    <label for="Name" class="name">Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        required="true"
-                        class="name"
-                    />
-
-                    <label for="email" class="email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        required="true"
-                        class="email"
-                    />
-
-                    <br />
-                    <label for="message">Message</label>
-                    <br />
-                    <textarea name="message" required="true"></textarea>
-                    <br />
-                    <a href="mailto:"></a><span>wrote: </span>
+                    <div class="inline-field">
+                        <div class="field">
+                            <label for="Name" class="name">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                required="true"
+                                class="name"
+                            />
+                        </div>
+                        <div class="field">
+                            <label for="email" class="email">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                required="true"
+                                class="email"
+                            />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea
+                            name="message"
+                            required="true"
+                            rows="4"
+                        ></textarea>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -105,13 +111,35 @@
         <section id="messages">
             <div class="layout">
                 <h2>Messages</h2>
-                <ul></ul>
+                <ul>
+                    <li>
+                        <div class="comment">
+                            <div>Good Work!</div>
+                            <div>time from <a href="google.com">Ray</a></div>
+                        </div>
+                        <div>
+                            <button class="btn-edit">edit</button>
+                            <button class="btn-remove">remove</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="comment">
+                            <div>Good Work!</div>
+                            <div>time from <a href="google.com">Ray</a></div>
+                        </div>
+                        <div>
+                            <button class="btn-edit">edit</button>
+                            <button class="btn-remove">remove</button>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <footer>
             <div class="layout"></div>
         </footer>
+
         <script src="./js/index.js"></script>
     </body>
 </html>
