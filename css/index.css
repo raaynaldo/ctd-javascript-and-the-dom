@@ -1,0 +1,37 @@
+/* .email {
+    border: red 1px solid;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 68.75rem;
+}
+
+
+
+.email,
+.name {
+    display: block;
+}
+
+@media (min-width: 1000px) {
+    .email,
+    .name {
+        display: inline;
+    }
+}

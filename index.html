@@ -1,57 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <section id="about">
-      <h2>About</h2>
-    </section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body>
+        <header>
+            <div class="layout">
+                <img src="./picture.jpg" />
+                <div>Raynaldo Sutisna</div>
+            </div>
+        </header>
+        <section id="about">
+            <div class="layout">
+                <h2>About</h2>
+                <p>
+                    A Full Stack Web Developer offering 3+ years of experience
+                    in the full software development lifecycle experienced in
+                    Ruby on Rails, ASP.NET, JavaScript, and React. I am eligible
+                    to work in the US without the need for sponsorship.
+                </p>
+            </div>
+        </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-    </section>
+        <section id="experience">
+            <div class="layout">
+                <h2>Experience</h2>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul></ul>
-    </section>
+                <ul>
+                    <li>Software Engineer at VitusVet</li>
+                    <li>Full Stack Web Developer at Emerio Indonesia</li>
+                    <li>ASP.NET Developer at Mitra Integrasi Informatika</li>
+                    <li>ASP.NET Developer at Neurosoft Indonesia</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-      <h2>Connect</h2>
-    </section>
+        <section id="skills">
+            <div class="layout">
+                <h2>Skills</h2>
+                <ul></ul>
+            </div>
+        </section>
 
-    <section>
-      <h2>Leave a Message</h2>
-      <form action="" name="leave_message">
-        <label for="Name">Name</label>
-        <br />
-        <input type="text" name="name" required="true" />
-        <br />
+        <section>
+            <div class="layout">
+                <h2>Connect</h2>
+            </div>
+        </section>
 
-        <label for="email">Email</label>
-        <br />
-        <input type="email" name="email" required="true" />
-        <br />
+        <section>
+            <div class="layout">
+                <h2>Leave a Message</h2>
+                <form action="" name="leave_message">
+                    <label for="Name" class="name">Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        required="true"
+                        class="name"
+                    />
 
-        <label for="message">Message</label>
-        <br />
-        <textarea name="message" required="true"></textarea>
-        <br />
-        <a href="mailto:"></a><span>wrote: </span>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+                    <label for="email" class="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        required="true"
+                        class="email"
+                    />
 
-    <section id="messages">
-      <h2>Messages</h2>
-      <ul></ul>
-    </section>
+                    <br />
+                    <label for="message">Message</label>
+                    <br />
+                    <textarea name="message" required="true"></textarea>
+                    <br />
+                    <a href="mailto:"></a><span>wrote: </span>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
 
-    <footer></footer>
-    <script src="./js/index.js"></script>
-  </body>
+        <section id="messages">
+            <div class="layout">
+                <h2>Messages</h2>
+                <ul></ul>
+            </div>
+        </section>
+
+        <footer>
+            <div class="layout"></div>
+        </footer>
+        <script src="./js/index.js"></script>
+    </body>
 </html>
